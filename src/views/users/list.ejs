@@ -1,0 +1,12 @@
+<% users.forEach(user => { %>
+  <div>
+    <%= user.username %> (Role: <%= user.role_id %>)
+
+    <% if (userRole === 1 || userRole === 2) { %>
+      <form method="POST" action="/users/<%= user.id %>?_method=DELETE" style="display:inline;">
+        <button>Delete</button>
+      </form>
+    <% } %>
+
+  </div>
+<% }) %>
